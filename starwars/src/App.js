@@ -31,12 +31,14 @@ class App extends React.Component{
       <div className="App">
         <h1 className="Header">Characters</h1>
         <div className = "characterContainer">
-          {this.state.loading || this.state.person ? (
+          {this.state.loading || this.state.person ? 
+            // Either a "loading bar enters" or character data is loaded
+          (
             <div>loading...</div>
           ) : (
             this.state.people.map(person => {
               return (
-                <Character name = {person.name}/>
+                <Character key = {person.hair_color} name = {person.name} height = {person.height} mass = {person.mass} birthYear = {person.birth_year}/>
               )
             }) 
           )}
